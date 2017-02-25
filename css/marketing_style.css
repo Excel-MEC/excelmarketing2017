@@ -80,4 +80,186 @@ body{
     width: 40px;
     margin-top: 2px;
   }
+  /*---------Excel reach--------*/
+  .reach{
+    text-align: center;
+    padding-top: 20px;
+    border-bottom: 1px solid #d5d5d5;
+  }
+  .reach-content{
+    width: 70%;
+    margin: auto;
+  }
+  .reach-content>div{
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  .reach-content>div>img{
+    width: 70px;
+  }
+  .reach-content>div>.subh{
+    font-size: 20px;
+  }
+  /*-------Experience--------*/
+  .experience{
+    text-align: center;
+    padding-top: 20px;
+    border-bottom: 1px solid #d5d5d5;
+  }
+  .experience-content>div{
+    width: 100%;
+    display: flex;
+  }
+  .experience-content>div>div{
+    width: 45%;
+    margin: auto;
+    text-align: left;
+  }
+  .experience-content>div h3{
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  /*photo and the text in testimony*/
+  .experience-content>div>*{
+    width: 50%;
+    font-size: 14px;
+    height: 50%;
+  }
+  .experience-content>div>div>span{
+    font-size: 12px;
+  }
+  /*-----contacts---------*/
+  .contacts{
+    text-align: center;
+    padding-top: 20px;
+  }
+  .contacts-contents{
+    text-align: center;
+  }
+  .contacts-contents>div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .contacts-contents img{
+    border-radius: 100%;
+    width: 100px;
+  }
+  /*-----------sponsors-----------*/
+  .sponsors{
+    text-align: center;
+  }
+  .sponsors-content{
+    position: relative;
+    align-content: center;
+    display: block;
+    height:310px;
+  }
+  .sponsors-content>img{
+    position: absolute;
+    height: 300px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: block;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .sponsors-content>img.active-slide{
+    opacity: 1;
+  }
+  /*---------footer---------*/
+  .footer{
+    text-align: center;
+    margin-bottom: 63px;
+    background-color: red;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  i{
+	color: white;
+  }
+  a.facebook i:hover{
+  	color: #3b5998;
+  }
+  a.twitter i:hover{
+  	color: #00aced;
+  }
+  a.gplus i:hover{
+  	color: #d34836;
+  }
+  a.insta i:hover{
+  	color: #5F82AC;
+  }
+}
+
+@media (min-width:768px){
+  .drop_screen{
+    background-position: right;
+    height: unset;
+  }
+  .legacy{
+    position: static;
+    margin: auto;
+    margin-top: 100px;
+    left: unset;
+    transform: unset;
+    background: none;
+  }
+  .legacy>img{
+    width: 300px;
+  }
+  .legacy>p{
+    text-align: center;
+    font-size: 20px;
+  }
+  .reach-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .reach-content>div{
+    width: 40%;
+    margin: auto;
+    margin-top: 0;
+    font-size: 20px;
+  }
+  .reach-content>div>.subh{
+    font-size: 23px;
+  }
+  .experience-content{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .experience-content>div{
+    width: 50%;
+    /*order: 1;*/
+  }
+  .experience-content>div>*{
+    height: 100%;
+  }
+  .odd-exp0>img{
+    position: relative;
+    order: -1;
+  }
+  .odd-exp1>img{
+    position: relative;
+    order: 2;
+  }
+  .experience-content>div h3{
+    font-size: 19px;
+  }
+  .experience-content>div>div>span{
+    font-size: 15px;
+  }
+  .experience-content>div>div>p{
+    font-size: 17px
+  }
+  /*.odd-exp>img{
+    position: absolute;
+    right: 0;
+  }
+  .odd-exp>div{
+    margin: unset;
+
+  }*/
 }
