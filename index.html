@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Excel 2017 | Marketing</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/marketing_style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="imgs/favicon.png">
     <script src="js/jquery-3.1.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Satisfy|Varela+Round|Signika" rel="stylesheet">
   </head>
   <body>
     <div class="navbar">
       <div class="active"><a>HOME</a></div>
-      <div><a>GALLERY</a></div>
+      <div><a href="gallery.html">GALLERY</a></div>
       <!-- <div><a>TARIFF</a></div> -->
     </div>
     <div class="tabview-container">
@@ -22,8 +23,8 @@
         <div id="exp_tab"><a ><img src="imgs/experience(1).png">Experience</a></div>
         <div id="spon_tab"><a ><img src="imgs/sponsor(1).png">Sponsors</a></div>
         <div id="cont_tab"><a ><img src="imgs/phone(1).png">Contact</a></div>
-        <div class="page_links"><a >Gallery</a></div>
-        <div class="page_links"><a >Tariff</a></div>
+        <div class="page_links"><a href="gallery.html">Gallery</a></div>
+        <!-- <div class="page_links"><a >Tariff</a></div> -->
       </div>
     </div>
     <section class="drop_screen" id="home">
@@ -32,6 +33,7 @@
         <img src="imgs/excel2017.png">
         <p>Govt. Model Engineering College, Kochi, is among South India’s pre-eminent institutions, in grooming the future engineers of our country. Established in 1989, under the patronage of the Institute of Human Resource Development, the college has risen to the pinnacle of excellence. Excel, the nation’s second and South India’s first techno-managerial fest was started in 2001 by the students of Govt. Model Engineering College.</p>
       </div>
+      <div class="mec-link"><a href="http://mec.ac.in/" target="_blank"><img src="imgs/meclink.png"></a></div>
     </section>
     <section class="reach" id="reach">
       <h2>Excel Reach</h2>
@@ -60,7 +62,7 @@
               <div class="sublogo"><img src="imgs/online.png"></div>
               <span class="subh">Online Participation</span>
             </div>
-            <p>Stuck at work? Can't make it to Excel? No problem! Excel reaches out to more than 1.5 million students and professionals across the globe through its vast array of online events</p>
+            <p>Stuck at work? Can't make it to Excel? No problem! Excel reaches out to more than 1.5 million students and professionals across the globe through its vast array of online events.</p>
           </div>
         </div>
         <div>
@@ -95,7 +97,7 @@
     <section class="experience" id="experience">
       <div class="experience-header"><h2>Experience</h2></div>
       <div class="experience-content">
-        <div class="odd-exp0 checker">
+        <div class="odd-exp0">
           <div>
             <h3>Hibi Eden</h3>
             <span>MLA</span>
@@ -103,7 +105,7 @@
           </div>
           <img src="imgs/testimonials/ARhb.jpg">
         </div>
-        <div class="checker">
+        <div>
           <img src="imgs/testimonials/ARkris.jpg">
           <div>
             <h3>Kris Gopalakrishnan</h3>
@@ -111,7 +113,7 @@
             <p>"Well organised. Enthusiastic students and faculty."</p>
           </div>
         </div>
-        <div>
+        <div class="checker">
           <div>
             <h3>Pramod Raman</h3>
             <span>Manorama News</span>
@@ -119,7 +121,7 @@
           </div>
           <img src="imgs/testimonials/ARpr.jpg">
         </div>
-        <div class="odd-exp1">
+        <div class="odd-exp1 checker">
           <img src="imgs/testimonials/ARrm.jpg">
           <div>
             <h3>Rekha Menon</h3>
@@ -127,7 +129,7 @@
             <p>"Well Organised and executed. Good event."</p>
           </div>
         </div>
-        <div class="odd-exp0 checker">
+        <div class="odd-exp0">
           <div>
             <h3>R Sreelekha</h3>
             <span>IPS Officer</span>
@@ -135,7 +137,7 @@
           </div>
           <img src="imgs/testimonials/ARrsreelekha.jpg">
         </div>
-        <div class="checker">
+        <div>
           <img src="imgs/testimonials/ARsanthosh.jpg">
           <div>
             <h3>Santosh Hegde</h3>
@@ -181,6 +183,15 @@
           </div>
         </div>
         <div>
+          <img src="imgs/contacts/aliya.png">
+          <div class="contact-desc">
+            <p>Joel Cheison</p>
+            <p>Marketing head</p>
+            <p>+91 182937189</p>
+            <p>joelcheison@excelmec.org</p>
+          </div>
+        </div>
+        <div>
           <img src="imgs/contacts/joelc.png">
           <div class="contact-desc">
             <p>Joel Cheison</p>
@@ -205,12 +216,13 @@
         </div>
         <div>
           <div style="display:flex;margin: auto;" id="mec">
-            <img src="imgs/header.png">
+            <a style="display:flex;text-decoration:none;" href="http://mec.ac.in/"><img src="imgs/header.png">
             <div class="college-footer">
               <p>Govt. Model</p>
               <p>Engineering</p>
               <p>College, Kochi</p>
             </div>
+          </a>
           </div>
           <div style="display:flex;margin: auto;" id="mec">
             <img src="imgs/logofooter.png">

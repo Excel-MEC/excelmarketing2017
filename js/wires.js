@@ -19,7 +19,10 @@ function tab_handler(){
   });
   $('#exp_tab').click(function() {
     // currElt = activate_tab($(this),currElt);
-    $('html,body').animate({scrollTop :$('#experience').offset().top},500);
+    if(window.innerWidth<700)
+      $('html,body').animate({scrollTop :$('#experience').offset().top},500);
+    else
+      $('html,body').animate({scrollTop :$('#experience').offset().top - $('.tab-view').outerHeight(true)},500);
   });
   $('#spon_tab').click(function() {
     // currElt = activate_tab($(this),currElt);
