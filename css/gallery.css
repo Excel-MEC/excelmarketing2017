@@ -100,7 +100,16 @@ header {
 
 /**********Mobile***********/
 
+
+
 @media ( max-width: 640px) {
+
+	.imgtitle{
+		font-size: 20px;
+	}
+	.imgdesc{
+		font-size: 15px;
+	}
 
 	.img-cntr {
 		width: 100%;
