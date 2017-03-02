@@ -1,16 +1,36 @@
 body{
   margin: 0;
-  /*background-color: black;*/
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+  font-family: 'Varela Round', sans-serif;
+}
+.subh{
+  font-family: 'Signika', sans-serif;
+}
+
+@media (max-width:360px){
+  .overlay{
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    width: 100%;
+    height: inherit;
+  }
 }
 
 @media (min-width:300px){
+  .page_links{
+    display: none;
+  }
   .drop_screen{
     border-top: 1px solid #d5d5d5;
     border-bottom: 1px solid #d5d5d5;
     display:flex;
-    background-image: url('../imgs/mec-small.png');
+    background-image: url('../imgs/nobgink.png');
     background-repeat: no-repeat;
     background-position: top;
+    background-size: contain;
     height: calc(100vh - 116px);
   }
   .legacy{
@@ -20,8 +40,8 @@ body{
     bottom: 64px;
     transform: translateX(-50%);
     /*background-color: white;*/
-    background: -webkit-linear-gradient(bottom, white 80%, rgba(255, 255, 255, 0));
-    background: linear-gradient(bottom, white 80%, rgba(255, 255, 255, 0));
+    /*background: -webkit-linear-gradient(bottom, white 80%, rgba(255, 255, 255, 0));
+    background: linear-gradient(bottom, white 80%, rgba(255, 255, 255, 0));*/
 
   }
   .legacy>img{
@@ -59,6 +79,10 @@ body{
     width: 100%;
     font-size: 12px;
   }
+  .tab-view a{
+    text-decoration: none;
+    color: inherit;
+  }
   .tab-view>div{
     text-align: center;
     margin: auto;
@@ -70,13 +94,14 @@ body{
   }
   .tabview-container{
     position: fixed;
+    z-index: 1000;
     bottom: 0;
     width: 100%;
     z-index: 99;
     height: 63px;
     background-color: rgba(255, 255, 255, 0.8);
   }
-  .tab-view>div>img{
+  .tab-view>div img{
     width: 40px;
     margin-top: 2px;
   }
@@ -84,21 +109,44 @@ body{
   .reach{
     text-align: center;
     padding-top: 20px;
+    padding-bottom:20px;
     border-bottom: 1px solid #d5d5d5;
   }
   .reach-content{
-    width: 70%;
+    width: 75%;
     margin: auto;
   }
   .reach-content>div{
     margin-top: 60px;
     margin-bottom: 60px;
   }
-  .reach-content>div>img{
-    width: 70px;
+  .reach-content>div>div{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
-  .reach-content>div>.subh{
-    font-size: 20px;
+  .reach-content>div img{
+    width: 60px;
+    box-shadow: -1px 3px 5px grey;
+    border-radius: 100%;
+  }
+  .sublogo{
+    padding: 10px;
+    transform: translate(-50%,-50%);
+  }
+  .reach-content>div .subh{
+    font-size: 25px;
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+  }
+  .reach-header{
+    display: inline-flex;
+    width: 100%;
+    background-color: #2a2a2a;
+    color: wheat;
+  }
+  .reach-content p{
+    padding: 10px;
+    margin: 0;
   }
   /*-------Experience--------*/
   .experience{
@@ -114,6 +162,10 @@ body{
     width: 45%;
     margin: auto;
     text-align: left;
+  }
+  .experience-content>div>div>p{
+    font-family: 'Satisfy', cursive;
+    font-weight: normal;
   }
   .experience-content>div h3{
     font-size: 15px;
@@ -132,21 +184,43 @@ body{
   .contacts{
     text-align: center;
     padding-top: 20px;
+    padding-bottom: 40px;
   }
   .contacts-contents{
     text-align: center;
   }
   .contacts-contents>div{
+    width: 90%;
+    margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  .contacts-contents>div>div{
+    padding-bottom: 10px;
   }
   .contacts-contents img{
-    border-radius: 100%;
-    width: 100px;
+    width: 100%;
+  }
+  .contacts-contents p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    text-align: left;
+  }
+  .contacts-contents p.cname{
+    color: #888;
   }
   /*-----------sponsors-----------*/
   .sponsors{
     text-align: center;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    background-color: #2a2a2a;
+  }
+  .sponsors>h2{
+    margin: 0;
+    color: white;
   }
   .sponsors-content{
     position: relative;
@@ -171,12 +245,58 @@ body{
   .footer{
     text-align: center;
     margin-bottom: 63px;
-    background-color: red;
     padding-bottom: 10px;
+    background-color: #2a2a2a;
+  }
+  .footer div{
+    text-align: center;
+    color: white;
+    margin: auto;
+  }
+  .footer>div#cr>h4{
+    font-weight: normal;;
+    margin: 10px;
+  }
+  .footer-header{
+    background-color: #414040;
+    text-align: center;
+    color: white;
+    height: 40px;
+    line-height: 40px;
     padding-top: 10px;
+    padding-bottom: 5px;
+  }
+  .footer-content{
+    padding-top: 5px;
+  }
+  .footer-header h4{
+    margin: 0;
+  }
+  .footer-content>div{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  .footer-content>div>a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    /*line-height: 50px;*/
+    border-radius: 100%;
+    margin: auto;
   }
   i{
-	color: white;
+  	color: #2a2a2a;
+    position: relative;
+    transform: translatey(-50%);
+    top: 50%;
+  }
+  .fa-2x{
+    font-size: 25px !important;
   }
   a.facebook i:hover{
   	color: #3b5998;
@@ -190,16 +310,36 @@ body{
   a.insta i:hover{
   	color: #5F82AC;
   }
+  .excel-footer p{
+    margin: 0;
+    font-size: 20px;
+  }
+  .college-footer p{
+    margin: 3px;
+    color: white;
+    font-size: 10px;
+  }
+  #mec img{
+    height: 50px;
+  }
 }
 
 @media (min-width:768px){
   .drop_screen{
     background-position: right;
     height: unset;
+    position: relative;
+  }
+  .overlay{
+    background-color: rgba(255,255,255,0.6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
   .legacy{
     position: static;
     margin: auto;
+    z-index: 1;
     margin-top: 100px;
     left: unset;
     transform: unset;
@@ -220,11 +360,17 @@ body{
   .reach-content>div{
     width: 40%;
     margin: auto;
-    margin-top: 0;
+    margin-top: 50px;
     font-size: 20px;
   }
   .reach-content>div>.subh{
     font-size: 23px;
+  }
+  .reach-content>div img {
+    width: 70px;
+  }
+  .sublogo{
+    transform: translate(-40%,-40%);
   }
   .experience-content{
     display: flex;
@@ -254,12 +400,163 @@ body{
   .experience-content>div>div>p{
     font-size: 17px
   }
-  /*.odd-exp>img{
-    position: absolute;
-    right: 0;
+  .sponsors-content{
+    display: flex;
+    flex-wrap: wrap;
+    height: unset;
   }
-  .odd-exp>div{
-    margin: unset;
+  .sponsors-content>img{
+    position: relative;
+    opacity: 1;
+    left: unset;
+    transform: none;
+    /*filter: grayscale();*/
+    height: 200px;
+  }
+  /*-----contacts------*/
+  .contacts-contents{
+    display: flex;
+  }
+  .contacts-contents>div{
+    width: 40%;
+    margin: auto;
+  }
+  /*---tab-view--------*/
+  .tabview-container{
+    height: 73px;
+  }
+  .tab-view{
+    font-size: 18px;
+  }
+  .tab-view>div img{
+    width: 50px;
+    display: block;
+    margin: auto;
+  }
+  .footer{
+    margin-bottom: 72px;
+  }
+  .footer-content>div{
+    width: 60%;
+  }
+  .footer-content>div#social{
+    width: 40%;
+  }
+  .college-footer p{
+    font-size: unset;
+  }
+  #mec img{
+    height: 70px;
+  }
+}
 
-  }*/
+
+
+@media (min-width:1000px){
+  .navbar{
+    display: none;
+  }
+  /*--------tab-styles---------*/
+  .tabview-container{
+    position: fixed;
+    height: 70px;
+    line-height: 70px;
+    background-color: rgba(255, 255, 255, 1);
+    top: 0;
+  }
+  .tab-view{
+    width: 80%;
+    margin: auto;
+  }
+  .page_links{
+    display: flex;
+  }
+  .page_links>div{
+    margin: auto;
+  }
+  .tab-view>div img{
+    display: none ;
+  }
+  .tab-view>div{
+    border-top: none;
+    border-bottom: 4px solid transparent;
+  }
+  .tab-view>div.active-tab{
+    border-top: none;
+    border-bottom: 4px solid #26b5e1;
+  }
+  /*-------dropscreen----------*/
+  .drop_screen{
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+  }
+  .legacy>p{
+    text-align: left;
+    width: 50%
+  }
+  /*------reach-------*/
+  .reach-content>div>div{
+    width: 85%;
+    margin: auto;
+  }
+  .reach-content>div{
+    width: 30%;
+  }
+  /*---------experience-------*/
+  .experience{
+    display: flex;
+    padding-top: 0;
+  }
+  .experience>div.experience-header{
+    width: 25%;
+  }
+  div.experience-header>h2{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .experience-content{
+    width: 75%;
+  }
+  /*-----contacts--------*/
+  .contacts-contents>div{
+    width: 30%;
+  }
+  /*------footer---------*/
+  .footer{
+    margin-bottom: 0;
+  }
+  .footer-content>div{
+    width: 40%;
+  }
+  .footer-content>div#social{
+    width: 30%;
+  }
+
+}
+
+@media (width:1024px) and (height:1366px){
+  .drop_screen{
+    height: unset;
+  }
+}
+
+@media(min-width:1400px){
+  .experience-content>div>div>p{
+    font-size: 25px;
+  }
+}
+
+
+/*animations*/
+
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

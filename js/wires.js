@@ -1,31 +1,52 @@
 window.addEventListener("load",function begin(event){
   window.removeEventListener("load", begin, false);
   tab_handler();
-  if(window.width<700)
+  // alert(window.innerWidth)
+  window.currElt = $('#home_tab');
+  scroll_spy_init();
+  if(window.innerWidth<700)
     sponsors_slidehow();
 },false);
 
 function tab_handler(){
-  var tab_view = document.querySelector('.tab-view');
-  var active_tab= document.querySelector('.active-tab');
-  tab_view.addEventListener('click',function(e){
-    // alert(tab_view.children.indexOf(e.target));
-    var click_elem = e.target;
-    if(click_elem.tagName=='IMG'||click_elem.tagName=='A')
-      click_elem = click_elem.parentNode;
-    if(active_tab!=click_elem && click_elem.children.length==2){
-      var mod_string;
-      mod_string = active_tab.children[0].src;
-      mod_string = mod_string.replace('.png','(1).png');
-      active_tab.classList.remove('active-tab');
-      active_tab.children[0].src = mod_string;
-      active_tab = click_elem;
-      active_tab.classList.add('active-tab');
-      mod_string = active_tab.children[0].src;
-      mod_string = mod_string.replace('(1).png','.png');
-      active_tab.children[0].src = mod_string;
-    }
+  $('#home_tab').click(function() {
+    // currElt = activate_tab($(this),currElt);
+    $('html,body').animate({scrollTop :$('#home').offset().top-$('.navbar').outerHeight(true)},500);
   });
+  $('#reach_tab').click(function() {
+    // currElt = activate_tab($(this),currElt);
+    $('html,body').animate({scrollTop :$('#reach').offset().top},500);
+  });
+  $('#exp_tab').click(function() {
+    // currElt = activate_tab($(this),currElt);
+    $('html,body').animate({scrollTop :$('#experience').offset().top},500);
+  });
+  $('#spon_tab').click(function() {
+    // currElt = activate_tab($(this),currElt);
+    $('html,body').animate({scrollTop :$('#sponsors').offset().top},500);
+  });
+  $('#cont_tab').click(function(){
+    // currElt = activate_tab($(this),currElt);
+    $('html,body').animate({scrollTop :$('#contact').offset().top},500);
+  });
+}
+
+function activate_tab(activ, current){
+  // console.log(current);
+  if(activ!=current){
+    var currStr = current.find('img').attr('src');
+    if(!currStr.includes('(1).png')){
+      currStr = currStr.replace('.png','(1).png');
+      current.find('img').attr('src',currStr);
+      current.removeClass('active-tab');
+      var actStr = activ.find('img').attr('src');
+      actStr = actStr.replace('(1).png','.png');
+      activ.find('img').attr('src',actStr);
+      activ.addClass('active-tab');
+      return activ;
+    }
+    return current;
+  }
 }
 
 function sponsors_slidehow(){
@@ -38,3 +59,50 @@ function sponsors_slidehow(){
       slides[++iter].classList.add('active-slide');
   },1000);
 }
+
+function scroll_spy_init(){
+  var scrollPos = $('body').scrollTop(),i=0;
+  var devHeight = window.innerHeight;
+  var revheight = 3*Math.ceil((devHeight - $('.tabview-container').height())/4);
+  // alert(revheight);
+  var scrolls = [
+    $('#home').offset().top + $('#home').outerHeight(true),
+    $('#reach').offset().top + $('#reach').outerHeight(true),
+    $('#experience').offset().top + $('#experience').outerHeight(true),
+    $('#sponsors').offset().top + $('#sponsors').outerHeight(true)
+  ];
+  var spyScroll = setInterval(function(){
+    scrollPos = $('body').scrollTop();
+    // console.log(scrolls[2]-scrollPos);
+    if(scrollPos<=$('.navbar').outerHeight(true)){
+      currElt = activate_tab($('#home_tab'),currElt);
+    }
+    else if(scrolls[3]-scrollPos<=revheight||scrollPos==devHeight){
+      // handle_reach();
+      currElt = activate_tab($('#cont_tab'),currElt);
+      console.log('cont');
+    }
+    else if(scrolls[2]-scrollPos<=revheight){
+      // handle_experience();
+      currElt = activate_tab($('#spon_tab'),currElt);
+      console.log('spon');
+    }
+    else if(scrolls[1]-scrollPos<=revheight){
+      // handle_contact();
+      currElt = activate_tab($('#exp_tab'),currElt);
+      console.log('exp');
+    }
+    else if(scrolls[0]-scrollPos<=revheight){
+      currElt = activate_tab($('#reach_tab'),currElt);
+      console.log('reach');
+    }
+    // console.log('something');
+  },500);
+  console.log(scrolls);
+}
+
+// function smoothScroll(to){
+//   var currScrollPos = doc
+//   var scrollToElement = document.querySelector('#')
+//   alert(scrollToPos)
+// }
