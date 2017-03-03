@@ -113,7 +113,7 @@ section.contacts h2{
     border-top: 2px solid transparent;
   }
   .tab-view>div.active-tab{
-    border-top: 2px solid #26b5e1;
+    border-top: 2px solid #c54d4d;
   }
   .tabview-container{
     position: fixed;
@@ -547,7 +547,7 @@ section.contacts h2{
   }
   .tab-view>div.active-tab{
     border-top: none;
-    border-bottom: 4px solid #26b5e1;
+    border-bottom: 4px solid #c54d4d;
   }
   /*-------dropscreen----------*/
   .drop_screen{
