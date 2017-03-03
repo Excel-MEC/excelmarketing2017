@@ -514,7 +514,8 @@ section.contacts h2{
   .tabview-container{
     position: fixed;
     height: 70px;
-    line-height: 70px;
+    line-height: 66px;
+    box-shadow: 1px 1px 5px;
     background-color: rgba(255, 255, 255, 1);
     top: 0;
   }
